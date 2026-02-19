@@ -14,6 +14,13 @@ class PharmaClear(ARC4Contract):
     - Retrieving claim metadata
     
     Full claim text is stored in transaction notes for Indexer/Conduit to capture.
+    
+    Methods:
+    - hello: Legacy test method (for backward compatibility)
+    - submit_claim & verify_claim: Legacy methods (transitioning to Layer 0)
+    - submit_claim_hash: Core Layer 0 method to submit claim fingerprint
+    - get_last_claim_hash: Core Layer 0 method (read-only)
+    - get_claim_count: Core Layer 0 method (read-only)
     """
 
     @abimethod()
@@ -28,6 +35,22 @@ class PharmaClear(ARC4Contract):
             Greeting string
         """
         return "Hello, " + name
+
+    @abimethod()
+    def submit_claim(self, claim_hash: String) -> String:
+        """
+        Legacy method: Submit a claim (will be phased out).
+        Use submit_claim_hash instead.
+        """
+        return "Claim submitted with hash: " + claim_hash
+
+    @abimethod()
+    def verify_claim(self, claim_hash: String) -> String:
+        """
+        Legacy method: Verify a claim (will be phased out).
+        Use get_last_claim_hash instead.
+        """
+        return "Claim verified: " + claim_hash
 
     @abimethod()
     def submit_claim_hash(self, claim_hash: String) -> UInt64:
