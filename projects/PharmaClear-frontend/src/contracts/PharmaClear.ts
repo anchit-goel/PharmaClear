@@ -24,7 +24,7 @@ import { SendParams, SendSingleTransactionResult, SendAtomicTransactionComposerR
 import { Address, encodeAddress, modelsv2, OnApplicationComplete, Transaction, TransactionSigner } from 'algosdk'
 import SimulateResponse = modelsv2.SimulateResponse
 
-export const APP_SPEC: Arc56Contract = {"name":"PharmaClear","structs":{},"methods":[{"name":"hello","args":[{"type":"string","name":"name"}],"returns":{"type":"string"},"actions":{"create":[],"call":["NoOp"]},"readonly":false,"events":[],"recommendations":{}}],"arcs":[22,28],"networks":{},"state":{"schema":{"global":{"ints":0,"bytes":0},"local":{"ints":0,"bytes":0}},"keys":{"global":{},"local":{},"box":{}},"maps":{"global":{},"local":{},"box":{}}},"bareActions":{"create":["NoOp"],"call":[]},"sourceInfo":{"approval":{"sourceInfo":[{"pc":[44],"errorMessage":"invalid array length header"},{"pc":[52],"errorMessage":"invalid number of bytes for arc4.dynamic_array<arc4.uint8>"}],"pcOffsetMethod":"none"},"clear":{"sourceInfo":[],"pcOffsetMethod":"none"}},"source":{"approval":"I3ByYWdtYSB2ZXJzaW9uIDExCiNwcmFnbWEgdHlwZXRyYWNrIGZhbHNlCgovLyBhbGdvcHkuYXJjNC5BUkM0Q29udHJhY3QuYXBwcm92YWxfcHJvZ3JhbSgpIC0+IHVpbnQ2NDoKbWFpbjoKICAgIC8vIHNtYXJ0X2NvbnRyYWN0cy9waGFybWFfY2xlYXIvY29udHJhY3QucHk6NQogICAgLy8gY2xhc3MgUGhhcm1hQ2xlYXIoQVJDNENvbnRyYWN0KToKICAgIHR4biBOdW1BcHBBcmdzCiAgICBieiBtYWluX19fYWxnb3B5X2RlZmF1bHRfY3JlYXRlQDUKICAgIHB1c2hieXRlcyAweDAyYmVjZTExIC8vIG1ldGhvZCAiaGVsbG8oc3RyaW5nKXN0cmluZyIKICAgIHR4bmEgQXBwbGljYXRpb25BcmdzIDAKICAgIG1hdGNoIG1haW5faGVsbG9fcm91dGVAMwogICAgZXJyCgptYWluX2hlbGxvX3JvdXRlQDM6CiAgICAvLyBzbWFydF9jb250cmFjdHMvcGhhcm1hX2NsZWFyL2NvbnRyYWN0LnB5OjYKICAgIC8vIEBhYmltZXRob2QoKQogICAgdHhuIE9uQ29tcGxldGlvbgogICAgIQogICAgdHhuIEFwcGxpY2F0aW9uSUQKICAgICYmCiAgICBhc3NlcnQKICAgIGIgaGVsbG8KCm1haW5fX19hbGdvcHlfZGVmYXVsdF9jcmVhdGVANToKICAgIHR4biBPbkNvbXBsZXRpb24KICAgICEKICAgIHR4biBBcHBsaWNhdGlvbklECiAgICAhCiAgICAmJgogICAgcmV0dXJuCgoKLy8gc21hcnRfY29udHJhY3RzLnBoYXJtYV9jbGVhci5jb250cmFjdC5QaGFybWFDbGVhci5oZWxsb1tyb3V0aW5nXSgpIC0+IHZvaWQ6CmhlbGxvOgogICAgLy8gc21hcnRfY29udHJhY3RzL3BoYXJtYV9jbGVhci9jb250cmFjdC5weTo2CiAgICAvLyBAYWJpbWV0aG9kKCkKICAgIHR4bmEgQXBwbGljYXRpb25BcmdzIDEKICAgIGR1cAogICAgcHVzaGludCAwCiAgICBleHRyYWN0X3VpbnQxNiAvLyBvbiBlcnJvcjogaW52YWxpZCBhcnJheSBsZW5ndGggaGVhZGVyCiAgICBwdXNoaW50IDIKICAgICsKICAgIGRpZyAxCiAgICBsZW4KICAgID09CiAgICBhc3NlcnQgLy8gaW52YWxpZCBudW1iZXIgb2YgYnl0ZXMgZm9yIGFyYzQuZHluYW1pY19hcnJheTxhcmM0LnVpbnQ4PgogICAgZXh0cmFjdCAyIDAKICAgIC8vIHNtYXJ0X2NvbnRyYWN0cy9waGFybWFfY2xlYXIvY29udHJhY3QucHk6OAogICAgLy8gcmV0dXJuICJIZWxsbywgIiArIG5hbWUKICAgIHB1c2hieXRlcyAiSGVsbG8sICIKICAgIHN3YXAKICAgIGNvbmNhdAogICAgLy8gc21hcnRfY29udHJhY3RzL3BoYXJtYV9jbGVhci9jb250cmFjdC5weTo2CiAgICAvLyBAYWJpbWV0aG9kKCkKICAgIGR1cAogICAgbGVuCiAgICBpdG9iCiAgICBleHRyYWN0IDYgMgogICAgc3dhcAogICAgY29uY2F0CiAgICBwdXNoYnl0ZXMgMHgxNTFmN2M3NQogICAgc3dhcAogICAgY29uY2F0CiAgICBsb2cKICAgIHB1c2hpbnQgMQogICAgcmV0dXJuCg==","clear":"I3ByYWdtYSB2ZXJzaW9uIDExCiNwcmFnbWEgdHlwZXRyYWNrIGZhbHNlCgovLyBhbGdvcHkuYXJjNC5BUkM0Q29udHJhY3QuY2xlYXJfc3RhdGVfcHJvZ3JhbSgpIC0+IHVpbnQ2NDoKbWFpbjoKICAgIHB1c2hpbnQgMQogICAgcmV0dXJuCg=="},"byteCode":{"approval":"CzEbQQAYgAQCvs4RNhoAjgEAAQAxGRQxGBBEQgAIMRkUMRgUEEM2GgFJgQBZgQIISwEVEkRXAgCAB0hlbGxvLCBMUEkVFlcGAkxQgAQVH3x1TFCwgQFD","clear":"C4EBQw=="},"compilerInfo":{"compiler":"puya","compilerVersion":{"major":5,"minor":7,"patch":1}},"events":[],"templateVariables":{}} as unknown as Arc56Contract
+export const APP_SPEC: Arc56Contract = {"name":"PharmaClear","structs":{},"methods":[{"name":"hello","args":[{"type":"string","name":"name"}],"returns":{"type":"string"},"actions":{"create":[],"call":["NoOp"]},"readonly":false,"desc":"Greet the caller by name.","events":[],"recommendations":{}},{"name":"submit_claim","args":[{"type":"string","name":"claim_hash"}],"returns":{"type":"string"},"actions":{"create":[],"call":["NoOp"]},"readonly":false,"desc":"Submit a claim fingerprint.\nReturns a confirmation message with the hash.","events":[],"recommendations":{}},{"name":"verify_claim","args":[{"type":"string","name":"claim_hash"}],"returns":{"type":"string"},"actions":{"create":[],"call":["NoOp"]},"readonly":false,"desc":"Verify a claim by its hash.\nReturns a verification message.","events":[],"recommendations":{}}],"arcs":[22,28],"desc":"\n    PharmaClear - A pharmaceutical supply chain contract.\n    Provides methods to submit and retrieve claims with hashing for immutability.\n    ","networks":{},"state":{"schema":{"global":{"ints":0,"bytes":0},"local":{"ints":0,"bytes":0}},"keys":{"global":{},"local":{},"box":{}},"maps":{"global":{},"local":{},"box":{}}},"bareActions":{"create":["NoOp"],"call":[]},"sourceInfo":{"approval":{"sourceInfo":[{"pc":[67,108,169],"errorMessage":"invalid array length header"},{"pc":[74,115,176],"errorMessage":"invalid number of bytes for arc4.dynamic_array<arc4.uint8>"}],"pcOffsetMethod":"none"},"clear":{"sourceInfo":[],"pcOffsetMethod":"none"}},"source":{"approval":"I3ByYWdtYSB2ZXJzaW9uIDExCiNwcmFnbWEgdHlwZXRyYWNrIGZhbHNlCgovLyBhbGdvcHkuYXJjNC5BUkM0Q29udHJhY3QuYXBwcm92YWxfcHJvZ3JhbSgpIC0+IHVpbnQ2NDoKbWFpbjoKICAgIGludGNibG9jayAwIDIgMQogICAgYnl0ZWNibG9jayAweDE1MWY3Yzc1CiAgICAvLyBzbWFydF9jb250cmFjdHMvcGhhcm1hX2NsZWFyL2NvbnRyYWN0LnB5OjQKICAgIC8vIGNsYXNzIFBoYXJtYUNsZWFyKEFSQzRDb250cmFjdCk6CiAgICB0eG4gTnVtQXBwQXJncwogICAgYnogbWFpbl9fX2FsZ29weV9kZWZhdWx0X2NyZWF0ZUAxMAogICAgdHhuIE9uQ29tcGxldGlvbgogICAgIQogICAgYXNzZXJ0CiAgICB0eG4gQXBwbGljYXRpb25JRAogICAgYXNzZXJ0CiAgICBwdXNoYnl0ZXNzIDB4MDJiZWNlMTEgMHg5MDcyZWNjOSAweDJhZDNhOGZmIC8vIG1ldGhvZCAiaGVsbG8oc3RyaW5nKXN0cmluZyIsIG1ldGhvZCAic3VibWl0X2NsYWltKHN0cmluZylzdHJpbmciLCBtZXRob2QgInZlcmlmeV9jbGFpbShzdHJpbmcpc3RyaW5nIgogICAgdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMAogICAgbWF0Y2ggaGVsbG8gc3VibWl0X2NsYWltIHZlcmlmeV9jbGFpbQogICAgZXJyCgptYWluX19fYWxnb3B5X2RlZmF1bHRfY3JlYXRlQDEwOgogICAgdHhuIE9uQ29tcGxldGlvbgogICAgIQogICAgdHhuIEFwcGxpY2F0aW9uSUQKICAgICEKICAgICYmCiAgICByZXR1cm4KCgovLyBzbWFydF9jb250cmFjdHMucGhhcm1hX2NsZWFyLmNvbnRyYWN0LlBoYXJtYUNsZWFyLmhlbGxvW3JvdXRpbmddKCkgLT4gdm9pZDoKaGVsbG86CiAgICAvLyBzbWFydF9jb250cmFjdHMvcGhhcm1hX2NsZWFyL2NvbnRyYWN0LnB5OjEwCiAgICAvLyBAYWJpbWV0aG9kKCkKICAgIHR4bmEgQXBwbGljYXRpb25BcmdzIDEKICAgIGR1cAogICAgaW50Y18wIC8vIDAKICAgIGV4dHJhY3RfdWludDE2IC8vIG9uIGVycm9yOiBpbnZhbGlkIGFycmF5IGxlbmd0aCBoZWFkZXIKICAgIGludGNfMSAvLyAyCiAgICArCiAgICBkaWcgMQogICAgbGVuCiAgICA9PQogICAgYXNzZXJ0IC8vIGludmFsaWQgbnVtYmVyIG9mIGJ5dGVzIGZvciBhcmM0LmR5bmFtaWNfYXJyYXk8YXJjNC51aW50OD4KICAgIGV4dHJhY3QgMiAwCiAgICAvLyBzbWFydF9jb250cmFjdHMvcGhhcm1hX2NsZWFyL2NvbnRyYWN0LnB5OjEzCiAgICAvLyByZXR1cm4gIkhlbGxvLCAiICsgbmFtZQogICAgcHVzaGJ5dGVzICJIZWxsbywgIgogICAgc3dhcAogICAgY29uY2F0CiAgICAvLyBzbWFydF9jb250cmFjdHMvcGhhcm1hX2NsZWFyL2NvbnRyYWN0LnB5OjEwCiAgICAvLyBAYWJpbWV0aG9kKCkKICAgIGR1cAogICAgbGVuCiAgICBpdG9iCiAgICBleHRyYWN0IDYgMgogICAgc3dhcAogICAgY29uY2F0CiAgICBieXRlY18wIC8vIDB4MTUxZjdjNzUKICAgIHN3YXAKICAgIGNvbmNhdAogICAgbG9nCiAgICBpbnRjXzIgLy8gMQogICAgcmV0dXJuCgoKLy8gc21hcnRfY29udHJhY3RzLnBoYXJtYV9jbGVhci5jb250cmFjdC5QaGFybWFDbGVhci5zdWJtaXRfY2xhaW1bcm91dGluZ10oKSAtPiB2b2lkOgpzdWJtaXRfY2xhaW06CiAgICAvLyBzbWFydF9jb250cmFjdHMvcGhhcm1hX2NsZWFyL2NvbnRyYWN0LnB5OjE1CiAgICAvLyBAYWJpbWV0aG9kKCkKICAgIHR4bmEgQXBwbGljYXRpb25BcmdzIDEKICAgIGR1cAogICAgaW50Y18wIC8vIDAKICAgIGV4dHJhY3RfdWludDE2IC8vIG9uIGVycm9yOiBpbnZhbGlkIGFycmF5IGxlbmd0aCBoZWFkZXIKICAgIGludGNfMSAvLyAyCiAgICArCiAgICBkaWcgMQogICAgbGVuCiAgICA9PQogICAgYXNzZXJ0IC8vIGludmFsaWQgbnVtYmVyIG9mIGJ5dGVzIGZvciBhcmM0LmR5bmFtaWNfYXJyYXk8YXJjNC51aW50OD4KICAgIGV4dHJhY3QgMiAwCiAgICAvLyBzbWFydF9jb250cmFjdHMvcGhhcm1hX2NsZWFyL2NvbnRyYWN0LnB5OjIxCiAgICAvLyByZXR1cm4gIkNsYWltIHN1Ym1pdHRlZCB3aXRoIGhhc2g6ICIgKyBjbGFpbV9oYXNoCiAgICBwdXNoYnl0ZXMgIkNsYWltIHN1Ym1pdHRlZCB3aXRoIGhhc2g6ICIKICAgIHN3YXAKICAgIGNvbmNhdAogICAgLy8gc21hcnRfY29udHJhY3RzL3BoYXJtYV9jbGVhci9jb250cmFjdC5weToxNQogICAgLy8gQGFiaW1ldGhvZCgpCiAgICBkdXAKICAgIGxlbgogICAgaXRvYgogICAgZXh0cmFjdCA2IDIKICAgIHN3YXAKICAgIGNvbmNhdAogICAgYnl0ZWNfMCAvLyAweDE1MWY3Yzc1CiAgICBzd2FwCiAgICBjb25jYXQKICAgIGxvZwogICAgaW50Y18yIC8vIDEKICAgIHJldHVybgoKCi8vIHNtYXJ0X2NvbnRyYWN0cy5waGFybWFfY2xlYXIuY29udHJhY3QuUGhhcm1hQ2xlYXIudmVyaWZ5X2NsYWltW3JvdXRpbmddKCkgLT4gdm9pZDoKdmVyaWZ5X2NsYWltOgogICAgLy8gc21hcnRfY29udHJhY3RzL3BoYXJtYV9jbGVhci9jb250cmFjdC5weToyMwogICAgLy8gQGFiaW1ldGhvZCgpCiAgICB0eG5hIEFwcGxpY2F0aW9uQXJncyAxCiAgICBkdXAKICAgIGludGNfMCAvLyAwCiAgICBleHRyYWN0X3VpbnQxNiAvLyBvbiBlcnJvcjogaW52YWxpZCBhcnJheSBsZW5ndGggaGVhZGVyCiAgICBpbnRjXzEgLy8gMgogICAgKwogICAgZGlnIDEKICAgIGxlbgogICAgPT0KICAgIGFzc2VydCAvLyBpbnZhbGlkIG51bWJlciBvZiBieXRlcyBmb3IgYXJjNC5keW5hbWljX2FycmF5PGFyYzQudWludDg+CiAgICBleHRyYWN0IDIgMAogICAgLy8gc21hcnRfY29udHJhY3RzL3BoYXJtYV9jbGVhci9jb250cmFjdC5weToyOQogICAgLy8gcmV0dXJuICJDbGFpbSB2ZXJpZmllZDogIiArIGNsYWltX2hhc2gKICAgIHB1c2hieXRlcyAiQ2xhaW0gdmVyaWZpZWQ6ICIKICAgIHN3YXAKICAgIGNvbmNhdAogICAgLy8gc21hcnRfY29udHJhY3RzL3BoYXJtYV9jbGVhci9jb250cmFjdC5weToyMwogICAgLy8gQGFiaW1ldGhvZCgpCiAgICBkdXAKICAgIGxlbgogICAgaXRvYgogICAgZXh0cmFjdCA2IDIKICAgIHN3YXAKICAgIGNvbmNhdAogICAgYnl0ZWNfMCAvLyAweDE1MWY3Yzc1CiAgICBzd2FwCiAgICBjb25jYXQKICAgIGxvZwogICAgaW50Y18yIC8vIDEKICAgIHJldHVybgo=","clear":"I3ByYWdtYSB2ZXJzaW9uIDExCiNwcmFnbWEgdHlwZXRyYWNrIGZhbHNlCgovLyBhbGdvcHkuYXJjNC5BUkM0Q29udHJhY3QuY2xlYXJfc3RhdGVfcHJvZ3JhbSgpIC0+IHVpbnQ2NDoKbWFpbjoKICAgIHB1c2hpbnQgMQogICAgcmV0dXJuCg=="},"byteCode":{"approval":"CyADAAIBJgEEFR98dTEbQQAkMRkURDEYRIIDBAK+zhEEkHLsyQQq06j/NhoAjgMACQAyAG8AMRkUMRgUEEM2GgFJIlkjCEsBFRJEVwIAgAdIZWxsbywgTFBJFRZXBgJMUChMULAkQzYaAUkiWSMISwEVEkRXAgCAG0NsYWltIHN1Ym1pdHRlZCB3aXRoIGhhc2g6IExQSRUWVwYCTFAoTFCwJEM2GgFJIlkjCEsBFRJEVwIAgBBDbGFpbSB2ZXJpZmllZDogTFBJFRZXBgJMUChMULAkQw==","clear":"C4EBQw=="},"compilerInfo":{"compiler":"puya","compilerVersion":{"major":5,"minor":7,"patch":1}},"events":[],"templateVariables":{}} as unknown as Arc56Contract
 
 /**
  * A state record containing binary data
@@ -74,12 +74,20 @@ export type PharmaClearArgs = {
     'hello(string)string': {
       name: string
     }
+    'submit_claim(string)string': {
+      claimHash: string
+    }
+    'verify_claim(string)string': {
+      claimHash: string
+    }
   }
   /**
    * The tuple representation of the arguments for each method
    */
   tuple: {
     'hello(string)string': [name: string]
+    'submit_claim(string)string': [claimHash: string]
+    'verify_claim(string)string': [claimHash: string]
   }
 }
 
@@ -88,6 +96,8 @@ export type PharmaClearArgs = {
  */
 export type PharmaClearReturns = {
   'hello(string)string': string
+  'submit_claim(string)string': string
+  'verify_claim(string)string': string
 }
 
 /**
@@ -102,6 +112,16 @@ export type PharmaClearTypes = {
       argsObj: PharmaClearArgs['obj']['hello(string)string']
       argsTuple: PharmaClearArgs['tuple']['hello(string)string']
       returns: PharmaClearReturns['hello(string)string']
+    }>
+    & Record<'submit_claim(string)string' | 'submit_claim', {
+      argsObj: PharmaClearArgs['obj']['submit_claim(string)string']
+      argsTuple: PharmaClearArgs['tuple']['submit_claim(string)string']
+      returns: PharmaClearReturns['submit_claim(string)string']
+    }>
+    & Record<'verify_claim(string)string' | 'verify_claim', {
+      argsObj: PharmaClearArgs['obj']['verify_claim(string)string']
+      argsTuple: PharmaClearArgs['tuple']['verify_claim(string)string']
+      returns: PharmaClearReturns['verify_claim(string)string']
     }>
 }
 
@@ -156,6 +176,8 @@ export abstract class PharmaClearParamsFactory {
   /**
    * Constructs a no op call for the hello(string)string ABI method
    *
+   * Greet the caller by name.
+   *
    * @param params Parameters for the call
    * @returns An `AppClientMethodCallParams` object for the call
    */
@@ -164,6 +186,40 @@ export abstract class PharmaClearParamsFactory {
       ...params,
       method: 'hello(string)string' as const,
       args: Array.isArray(params.args) ? params.args : [params.args.name],
+    }
+  }
+  /**
+   * Constructs a no op call for the submit_claim(string)string ABI method
+   *
+  * Submit a claim fingerprint.
+  Returns a confirmation message with the hash.
+
+   *
+   * @param params Parameters for the call
+   * @returns An `AppClientMethodCallParams` object for the call
+   */
+  static submitClaim(params: CallParams<PharmaClearArgs['obj']['submit_claim(string)string'] | PharmaClearArgs['tuple']['submit_claim(string)string']> & CallOnComplete): AppClientMethodCallParams & CallOnComplete {
+    return {
+      ...params,
+      method: 'submit_claim(string)string' as const,
+      args: Array.isArray(params.args) ? params.args : [params.args.claimHash],
+    }
+  }
+  /**
+   * Constructs a no op call for the verify_claim(string)string ABI method
+   *
+  * Verify a claim by its hash.
+  Returns a verification message.
+
+   *
+   * @param params Parameters for the call
+   * @returns An `AppClientMethodCallParams` object for the call
+   */
+  static verifyClaim(params: CallParams<PharmaClearArgs['obj']['verify_claim(string)string'] | PharmaClearArgs['tuple']['verify_claim(string)string']> & CallOnComplete): AppClientMethodCallParams & CallOnComplete {
+    return {
+      ...params,
+      method: 'verify_claim(string)string' as const,
+      args: Array.isArray(params.args) ? params.args : [params.args.claimHash],
     }
   }
 }
@@ -409,11 +465,41 @@ export class PharmaClearClient {
     /**
      * Makes a call to the PharmaClear smart contract using the `hello(string)string` ABI method.
      *
+     * Greet the caller by name.
+     *
      * @param params The params for the smart contract call
      * @returns The call params
      */
     hello: (params: CallParams<PharmaClearArgs['obj']['hello(string)string'] | PharmaClearArgs['tuple']['hello(string)string']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
       return this.appClient.params.call(PharmaClearParamsFactory.hello(params))
+    },
+
+    /**
+     * Makes a call to the PharmaClear smart contract using the `submit_claim(string)string` ABI method.
+     *
+    * Submit a claim fingerprint.
+    Returns a confirmation message with the hash.
+
+     *
+     * @param params The params for the smart contract call
+     * @returns The call params
+     */
+    submitClaim: (params: CallParams<PharmaClearArgs['obj']['submit_claim(string)string'] | PharmaClearArgs['tuple']['submit_claim(string)string']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
+      return this.appClient.params.call(PharmaClearParamsFactory.submitClaim(params))
+    },
+
+    /**
+     * Makes a call to the PharmaClear smart contract using the `verify_claim(string)string` ABI method.
+     *
+    * Verify a claim by its hash.
+    Returns a verification message.
+
+     *
+     * @param params The params for the smart contract call
+     * @returns The call params
+     */
+    verifyClaim: (params: CallParams<PharmaClearArgs['obj']['verify_claim(string)string'] | PharmaClearArgs['tuple']['verify_claim(string)string']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
+      return this.appClient.params.call(PharmaClearParamsFactory.verifyClaim(params))
     },
 
   }
@@ -435,11 +521,41 @@ export class PharmaClearClient {
     /**
      * Makes a call to the PharmaClear smart contract using the `hello(string)string` ABI method.
      *
+     * Greet the caller by name.
+     *
      * @param params The params for the smart contract call
      * @returns The call transaction
      */
     hello: (params: CallParams<PharmaClearArgs['obj']['hello(string)string'] | PharmaClearArgs['tuple']['hello(string)string']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
       return this.appClient.createTransaction.call(PharmaClearParamsFactory.hello(params))
+    },
+
+    /**
+     * Makes a call to the PharmaClear smart contract using the `submit_claim(string)string` ABI method.
+     *
+    * Submit a claim fingerprint.
+    Returns a confirmation message with the hash.
+
+     *
+     * @param params The params for the smart contract call
+     * @returns The call transaction
+     */
+    submitClaim: (params: CallParams<PharmaClearArgs['obj']['submit_claim(string)string'] | PharmaClearArgs['tuple']['submit_claim(string)string']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
+      return this.appClient.createTransaction.call(PharmaClearParamsFactory.submitClaim(params))
+    },
+
+    /**
+     * Makes a call to the PharmaClear smart contract using the `verify_claim(string)string` ABI method.
+     *
+    * Verify a claim by its hash.
+    Returns a verification message.
+
+     *
+     * @param params The params for the smart contract call
+     * @returns The call transaction
+     */
+    verifyClaim: (params: CallParams<PharmaClearArgs['obj']['verify_claim(string)string'] | PharmaClearArgs['tuple']['verify_claim(string)string']> & {onComplete?: OnApplicationComplete.NoOpOC}) => {
+      return this.appClient.createTransaction.call(PharmaClearParamsFactory.verifyClaim(params))
     },
 
   }
@@ -461,12 +577,44 @@ export class PharmaClearClient {
     /**
      * Makes a call to the PharmaClear smart contract using the `hello(string)string` ABI method.
      *
+     * Greet the caller by name.
+     *
      * @param params The params for the smart contract call
      * @returns The call result
      */
     hello: async (params: CallParams<PharmaClearArgs['obj']['hello(string)string'] | PharmaClearArgs['tuple']['hello(string)string']> & SendParams & {onComplete?: OnApplicationComplete.NoOpOC}) => {
       const result = await this.appClient.send.call(PharmaClearParamsFactory.hello(params))
       return {...result, return: result.return as unknown as (undefined | PharmaClearReturns['hello(string)string'])}
+    },
+
+    /**
+     * Makes a call to the PharmaClear smart contract using the `submit_claim(string)string` ABI method.
+     *
+    * Submit a claim fingerprint.
+    Returns a confirmation message with the hash.
+
+     *
+     * @param params The params for the smart contract call
+     * @returns The call result
+     */
+    submitClaim: async (params: CallParams<PharmaClearArgs['obj']['submit_claim(string)string'] | PharmaClearArgs['tuple']['submit_claim(string)string']> & SendParams & {onComplete?: OnApplicationComplete.NoOpOC}) => {
+      const result = await this.appClient.send.call(PharmaClearParamsFactory.submitClaim(params))
+      return {...result, return: result.return as unknown as (undefined | PharmaClearReturns['submit_claim(string)string'])}
+    },
+
+    /**
+     * Makes a call to the PharmaClear smart contract using the `verify_claim(string)string` ABI method.
+     *
+    * Verify a claim by its hash.
+    Returns a verification message.
+
+     *
+     * @param params The params for the smart contract call
+     * @returns The call result
+     */
+    verifyClaim: async (params: CallParams<PharmaClearArgs['obj']['verify_claim(string)string'] | PharmaClearArgs['tuple']['verify_claim(string)string']> & SendParams & {onComplete?: OnApplicationComplete.NoOpOC}) => {
+      const result = await this.appClient.send.call(PharmaClearParamsFactory.verifyClaim(params))
+      return {...result, return: result.return as unknown as (undefined | PharmaClearReturns['verify_claim(string)string'])}
     },
 
   }
@@ -499,6 +647,22 @@ export class PharmaClearClient {
       hello(params: CallParams<PharmaClearArgs['obj']['hello(string)string'] | PharmaClearArgs['tuple']['hello(string)string']> & {onComplete?: OnApplicationComplete.NoOpOC}) {
         promiseChain = promiseChain.then(async () => composer.addAppCallMethodCall(await client.params.hello(params)))
         resultMappers.push((v) => client.decodeReturnValue('hello(string)string', v))
+        return this
+      },
+      /**
+       * Add a submit_claim(string)string method call against the PharmaClear contract
+       */
+      submitClaim(params: CallParams<PharmaClearArgs['obj']['submit_claim(string)string'] | PharmaClearArgs['tuple']['submit_claim(string)string']> & {onComplete?: OnApplicationComplete.NoOpOC}) {
+        promiseChain = promiseChain.then(async () => composer.addAppCallMethodCall(await client.params.submitClaim(params)))
+        resultMappers.push((v) => client.decodeReturnValue('submit_claim(string)string', v))
+        return this
+      },
+      /**
+       * Add a verify_claim(string)string method call against the PharmaClear contract
+       */
+      verifyClaim(params: CallParams<PharmaClearArgs['obj']['verify_claim(string)string'] | PharmaClearArgs['tuple']['verify_claim(string)string']> & {onComplete?: OnApplicationComplete.NoOpOC}) {
+        promiseChain = promiseChain.then(async () => composer.addAppCallMethodCall(await client.params.verifyClaim(params)))
+        resultMappers.push((v) => client.decodeReturnValue('verify_claim(string)string', v))
         return this
       },
       /**
@@ -539,11 +703,39 @@ export type PharmaClearComposer<TReturns extends [...any[]] = []> = {
   /**
    * Calls the hello(string)string ABI method.
    *
+   * Greet the caller by name.
+   *
    * @param args The arguments for the contract call
    * @param params Any additional parameters for the call
    * @returns The typed transaction composer so you can fluently chain multiple calls or call execute to execute all queued up transactions
    */
   hello(params?: CallParams<PharmaClearArgs['obj']['hello(string)string'] | PharmaClearArgs['tuple']['hello(string)string']>): PharmaClearComposer<[...TReturns, PharmaClearReturns['hello(string)string'] | undefined]>
+
+  /**
+   * Calls the submit_claim(string)string ABI method.
+   *
+  * Submit a claim fingerprint.
+  Returns a confirmation message with the hash.
+
+   *
+   * @param args The arguments for the contract call
+   * @param params Any additional parameters for the call
+   * @returns The typed transaction composer so you can fluently chain multiple calls or call execute to execute all queued up transactions
+   */
+  submitClaim(params?: CallParams<PharmaClearArgs['obj']['submit_claim(string)string'] | PharmaClearArgs['tuple']['submit_claim(string)string']>): PharmaClearComposer<[...TReturns, PharmaClearReturns['submit_claim(string)string'] | undefined]>
+
+  /**
+   * Calls the verify_claim(string)string ABI method.
+   *
+  * Verify a claim by its hash.
+  Returns a verification message.
+
+   *
+   * @param args The arguments for the contract call
+   * @param params Any additional parameters for the call
+   * @returns The typed transaction composer so you can fluently chain multiple calls or call execute to execute all queued up transactions
+   */
+  verifyClaim(params?: CallParams<PharmaClearArgs['obj']['verify_claim(string)string'] | PharmaClearArgs['tuple']['verify_claim(string)string']>): PharmaClearComposer<[...TReturns, PharmaClearReturns['verify_claim(string)string'] | undefined]>
 
   /**
    * Makes a clear_state call to an existing instance of the PharmaClear smart contract.

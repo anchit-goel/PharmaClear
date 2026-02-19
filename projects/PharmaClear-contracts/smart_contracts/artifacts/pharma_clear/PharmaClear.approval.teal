@@ -3,26 +3,23 @@
 
 // algopy.arc4.ARC4Contract.approval_program() -> uint64:
 main:
-    // smart_contracts/pharma_clear/contract.py:5
+    intcblock 0 2 1
+    bytecblock 0x151f7c75
+    // smart_contracts/pharma_clear/contract.py:4
     // class PharmaClear(ARC4Contract):
     txn NumAppArgs
-    bz main___algopy_default_create@5
-    pushbytes 0x02bece11 // method "hello(string)string"
-    txna ApplicationArgs 0
-    match main_hello_route@3
-    err
-
-main_hello_route@3:
-    // smart_contracts/pharma_clear/contract.py:6
-    // @abimethod()
+    bz main___algopy_default_create@10
     txn OnCompletion
     !
-    txn ApplicationID
-    &&
     assert
-    b hello
+    txn ApplicationID
+    assert
+    pushbytess 0x02bece11 0x9072ecc9 0x2ad3a8ff // method "hello(string)string", method "submit_claim(string)string", method "verify_claim(string)string"
+    txna ApplicationArgs 0
+    match hello submit_claim verify_claim
+    err
 
-main___algopy_default_create@5:
+main___algopy_default_create@10:
     txn OnCompletion
     !
     txn ApplicationID
@@ -33,25 +30,25 @@ main___algopy_default_create@5:
 
 // smart_contracts.pharma_clear.contract.PharmaClear.hello[routing]() -> void:
 hello:
-    // smart_contracts/pharma_clear/contract.py:6
+    // smart_contracts/pharma_clear/contract.py:10
     // @abimethod()
     txna ApplicationArgs 1
     dup
-    pushint 0
+    intc_0 // 0
     extract_uint16 // on error: invalid array length header
-    pushint 2
+    intc_1 // 2
     +
     dig 1
     len
     ==
     assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
     extract 2 0
-    // smart_contracts/pharma_clear/contract.py:8
+    // smart_contracts/pharma_clear/contract.py:13
     // return "Hello, " + name
     pushbytes "Hello, "
     swap
     concat
-    // smart_contracts/pharma_clear/contract.py:6
+    // smart_contracts/pharma_clear/contract.py:10
     // @abimethod()
     dup
     len
@@ -59,9 +56,81 @@ hello:
     extract 6 2
     swap
     concat
-    pushbytes 0x151f7c75
+    bytec_0 // 0x151f7c75
     swap
     concat
     log
-    pushint 1
+    intc_2 // 1
+    return
+
+
+// smart_contracts.pharma_clear.contract.PharmaClear.submit_claim[routing]() -> void:
+submit_claim:
+    // smart_contracts/pharma_clear/contract.py:15
+    // @abimethod()
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_1 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    // smart_contracts/pharma_clear/contract.py:21
+    // return "Claim submitted with hash: " + claim_hash
+    pushbytes "Claim submitted with hash: "
+    swap
+    concat
+    // smart_contracts/pharma_clear/contract.py:15
+    // @abimethod()
+    dup
+    len
+    itob
+    extract 6 2
+    swap
+    concat
+    bytec_0 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_2 // 1
+    return
+
+
+// smart_contracts.pharma_clear.contract.PharmaClear.verify_claim[routing]() -> void:
+verify_claim:
+    // smart_contracts/pharma_clear/contract.py:23
+    // @abimethod()
+    txna ApplicationArgs 1
+    dup
+    intc_0 // 0
+    extract_uint16 // on error: invalid array length header
+    intc_1 // 2
+    +
+    dig 1
+    len
+    ==
+    assert // invalid number of bytes for arc4.dynamic_array<arc4.uint8>
+    extract 2 0
+    // smart_contracts/pharma_clear/contract.py:29
+    // return "Claim verified: " + claim_hash
+    pushbytes "Claim verified: "
+    swap
+    concat
+    // smart_contracts/pharma_clear/contract.py:23
+    // @abimethod()
+    dup
+    len
+    itob
+    extract 6 2
+    swap
+    concat
+    bytec_0 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_2 // 1
     return
