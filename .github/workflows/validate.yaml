@@ -1,0 +1,14 @@
+name: Pull Request validation
+
+on: [pull_request]
+
+
+jobs:
+  PharmaClear-contracts-ci:
+    name: Run PharmaClear-contracts validation
+    uses: ./.github/workflows/PharmaClear-contracts-ci.yaml
+
+  PharmaClear-frontend-ci:
+    name: Run PharmaClear-frontend validation
+    uses: ./.github/workflows/PharmaClear-frontend-ci.yaml
+

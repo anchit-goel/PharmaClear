@@ -1,0 +1,38 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'docs/**'
+      - '**.md'
+      - '.vscode/**'
+      - '.idea/**'
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  PharmaClear-contracts-validate:
+    name: Run PharmaClear-contracts release
+    secrets: inherit
+    uses: ./.github/workflows/PharmaClear-contracts-ci.yaml
+
+  PharmaClear-contracts-release:
+    name: Run PharmaClear-contracts release
+    secrets: inherit
+    uses: ./.github/workflows/PharmaClear-contracts-cd.yaml
+    needs: PharmaClear-contracts-validate
+
+  PharmaClear-frontend-validate:
+    name: Run PharmaClear-frontend release
+    secrets: inherit
+    uses: ./.github/workflows/PharmaClear-frontend-ci.yaml
+
+  PharmaClear-frontend-release:
+    name: Run PharmaClear-frontend release
+    secrets: inherit
+    uses: ./.github/workflows/PharmaClear-frontend-cd.yaml
+    needs: PharmaClear-frontend-validate
