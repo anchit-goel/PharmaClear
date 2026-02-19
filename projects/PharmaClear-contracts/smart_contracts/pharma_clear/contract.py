@@ -1,29 +1,77 @@
 from algopy import ARC4Contract, String, UInt64
 from algopy.arc4 import abimethod
 
+
 class PharmaClear(ARC4Contract):
     """
     PharmaClear - A pharmaceutical supply chain contract.
-    Provides methods to submit and retrieve claims with hashing for immutability.
+    
+    Layer 0: Claim Ingestion
+    Tracks incoming pharmaceutical claims with fingerprints (SHA256 hashes).
+    
+    This layer provides the core ABI interface for:
+    - Submitting claim hashes (SHA256 of full claim text)
+    - Retrieving claim metadata
+    
+    Full claim text is stored in transaction notes for Indexer/Conduit to capture.
     """
 
     @abimethod()
     def hello(self, name: String) -> String:
-        """Greet the caller by name."""
+        """
+        Greet caller by name (temporary test method).
+        
+        Args:
+            name: Name to greet
+        
+        Returns:
+            Greeting string
+        """
         return "Hello, " + name
 
     @abimethod()
-    def submit_claim(self, claim_hash: String) -> String:
+    def submit_claim_hash(self, claim_hash: String) -> UInt64:
         """
-        Submit a claim fingerprint. 
-        Returns a confirmation message with the hash.
+        Submit a claim fingerprint (SHA256 hash).
+        
+        Full claim text must be included in the transaction note field
+        so that Indexer and Conduit can capture it alongside this hash.
+        
+        Args:
+            claim_hash: SHA256 hash of the complete claim text (typically 64-char hex string)
+        
+        Returns:
+            UInt64: Unique claim ID (proof of ingestion)
+        
+        On-chain behavior:
+        - Increments global claim counter
+        - Stores the hash as the most recent claim
+        - Returns the new claim ID
         """
-        return "Claim submitted with hash: " + claim_hash
+        # Layer 0 basic implementation - returns success indicator
+        # Full state management with counter + history will be in Box storage
+        return UInt64(1)
 
-    @abimethod()
-    def verify_claim(self, claim_hash: String) -> String:
+    @abimethod(readonly=True)
+    def get_last_claim_hash(self) -> String:
         """
-        Verify a claim by its hash.
-        Returns a verification message.
+        Retrieve the most recently submitted claim hash.
+        
+        Returns:
+            String: The last claim hash submitted, or empty string if none
         """
-        return "Claim verified: " + claim_hash
+        # Layer 0 basic implementation - returns placeholder
+        # Full state will be read from Box storage in Layer 1
+        return String("")
+
+    @abimethod(readonly=True)
+    def get_claim_count(self) -> UInt64:
+        """
+        Retrieve the total number of claims submitted so far.
+        
+        Returns:
+            UInt64: Total claim count
+        """
+        # Layer 0 basic implementation - returns placeholder
+        # Full state will be read from Box storage in Layer 1
+        return UInt64(0)

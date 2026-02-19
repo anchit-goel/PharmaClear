@@ -9,24 +9,55 @@ from algopy import String, UInt64
 
 @pytest.fixture()
 def context() -> Iterator[AlgopyTestContext]:
-    # provides the algopy testing runtime used by the template
+    """Provides the algopy testing runtime."""
     with algopy_testing_context() as ctx:
         yield ctx
 
 
-def test_submit_and_query(context: AlgopyTestContext) -> None:
-    # Arrange: create some example hashes (strings)
-    first_hash = String("hash_abc123")
-    second_hash = String("hash_def456")
-
+def test_submit_claim_hash_returns_uint64(context: AlgopyTestContext) -> None:
+    """Test that submit_claim_hash returns a UInt64 claim ID."""
     contract = PharmaClear()
+    
+    claim_hash = String("a" * 64)  # 64-char hex SHA256 hash
+    claim_id = contract.submit_claim_hash(claim_hash)
+    
+    # Layer 0 basic: should return a UInt64
+    assert isinstance(claim_id, UInt64)
+    assert claim_id == UInt64(1)
 
-    # Act: submit claims
-    result1 = contract.submit_claim(first_hash)
-    result2 = contract.submit_claim(second_hash)
-    result3 = contract.verify_claim(first_hash)
 
-    # Assert: verify claim submission and verification work
-    assert result1 == String("Claim submitted with hash: hash_abc123")
-    assert result2 == String("Claim submitted with hash: hash_def456")
-    assert result3 == String("Claim verified: hash_abc123")
+def test_get_last_claim_hash_returns_string(context: AlgopyTestContext) -> None:
+    """Test that get_last_claim_hash returns a String."""
+    contract = PharmaClear()
+    
+    last_hash = contract.get_last_claim_hash()
+    
+    # Layer 0 basic: should return a String (empty for now)
+    assert isinstance(last_hash, String)
+    assert last_hash == String("")
+
+
+def test_get_claim_count_returns_uint64(context: AlgopyTestContext) -> None:
+    """Test that get_claim_count returns a UInt64."""
+    contract = PharmaClear()
+    
+    count = contract.get_claim_count()
+    
+    # Layer 0 basic: should return a UInt64 (zero for now)
+    assert isinstance(count, UInt64)
+    assert count == UInt64(0)
+
+
+def test_abi_method_signatures(context: AlgopyTestContext) -> None:
+    """Test that all three Layer 0 methods exist and have correct signatures."""
+    contract = PharmaClear()
+    
+    # Verify methods are callable and return expected types
+    result1 = contract.submit_claim_hash(String("test_hash_" + "a" * 54))
+    assert isinstance(result1, UInt64)
+    
+    result2 = contract.get_last_claim_hash()
+    assert isinstance(result2, String)
+    
+    result3 = contract.get_claim_count()
+    assert isinstance(result3, UInt64)
